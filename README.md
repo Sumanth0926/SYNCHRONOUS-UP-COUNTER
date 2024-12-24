@@ -9,7 +9,17 @@ To implement 4 bit synchronous up counter and validate functionality.
 Quartus prime
 
 **THEORY**
-
+  module ex11(out,clk,rst);
+          input clk,rst;
+          output reg [3:0]out;
+          always @ (posedge clk)
+          begin
+             if(rst)
+               out<=0;
+             else 
+               out <= out+1;
+          end
+          endmodule
 **4 bit synchronous UP Counter**
 
 If we enable each J-K flip-flop to toggle based on whether or not all preceding flip-flop outputs (Q) are “high,” we can obtain the same counting sequence as the asynchronous circuit without the ripple effect, since each flip-flop in this circuit will be clocked at exactly the same time:
@@ -34,13 +44,27 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
+Developed by: pothu sumanth
+RegisterNumber: 24000831
 */
 
 **RTL LOGIC UP COUNTER**
 
+
+![Screenshot 2024-12-24 185045](https://github.com/user-attachments/assets/10e22799-7904-4b2d-b3ec-6100347a495e)
+
+
 **TIMING DIAGRAM FOR IP COUNTER**
+
+
+![Screenshot 2024-12-24 185107](https://github.com/user-attachments/assets/fc0f0175-e707-48a0-ae41-e881e3724869)
+
+
 
 **TRUTH TABLE**
 
+
+![Screenshot 2024-12-24 185116](https://github.com/user-attachments/assets/ea51713f-7bfc-4df7-a3d5-c05a7a845792)
+
 **RESULTS**
+Thus the Synchronous 3 bit Up counter is implemeted and verified
