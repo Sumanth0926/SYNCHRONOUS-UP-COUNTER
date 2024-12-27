@@ -9,17 +9,8 @@ To implement 4 bit synchronous up counter and validate functionality.
 Quartus prime
 
 **THEORY**
-  module ex11(out,clk,rst);
-          input clk,rst;
-          output reg [3:0]out;
-          always @ (posedge clk)
-          begin
-             if(rst)
-               out<=0;
-             else 
-               out <= out+1;
-          end
-          endmodule
+
+        
 **4 bit synchronous UP Counter**
 
 If we enable each J-K flip-flop to toggle based on whether or not all preceding flip-flop outputs (Q) are “high,” we can obtain the same counting sequence as the asynchronous circuit without the ripple effect, since each flip-flop in this circuit will be clocked at exactly the same time:
@@ -36,17 +27,39 @@ Since the first (LSB) flip-flop needs to toggle at every clock pulse, its J and 
 The next flip-flop need only “recognize” that the first flip-flop’s Q output is high to be made ready to toggle, so no AND gate is needed.
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
+**TRUTH TABLE**
+
+
+![WhatsApp Image 2024-12-21 at 08 57 56_65ac571c](https://github.com/user-attachments/assets/d6ce1065-0513-47d4-8abd-c91a91f34848)
+
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+     module ex11(out,clk,rst);
+              input clk,rst;
+              output reg [3:0]out;
+              always @ (posedge clk)
+              begin
+                 if(rst)
+                   out<=0;
+                 else 
+                   out <= out+1;
+              end
+            endmodule
 
 Developed by: pothu sumanth
 RegisterNumber: 24000831
-*/
 
 **RTL LOGIC UP COUNTER**
 
@@ -54,17 +67,12 @@ RegisterNumber: 24000831
 ![Screenshot 2024-12-24 185045](https://github.com/user-attachments/assets/10e22799-7904-4b2d-b3ec-6100347a495e)
 
 
-**TIMING DIAGRAM FOR IP COUNTER**
+**TIMING DIAGRAM FOR UP COUNTER**
 
 
 ![Screenshot 2024-12-24 185107](https://github.com/user-attachments/assets/fc0f0175-e707-48a0-ae41-e881e3724869)
 
 
 
-**TRUTH TABLE**
-
-
-![Screenshot 2024-12-24 185116](https://github.com/user-attachments/assets/ea51713f-7bfc-4df7-a3d5-c05a7a845792)
-
 **RESULTS**
-Thus the Synchronous 3 bit Up counter is implemeted and verified
+Thus the Synchronous 4 bit Up counter is implemeted and verified
